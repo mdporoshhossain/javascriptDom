@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+  
+    <h1>hello Event</h1>
+    <input id="input_Numbar" type="number" placeholder="Type number">
+    <button id="get_btn">click me</button>
+
+   <script>
+//   document.getElementById("inputNumbar").addEventListener('mouseout', function () {
+//     let inputElement = document.getElementById("inputNumbar");
+//     let parsedValue = parseInt(inputElement.value);
+
+//     // Check if the value is a valid number
+//     if (!isNaN(parsedValue)) {
+//       inputElement.value = parsedValue;
+//     }
+//   });
+
+document.getElementById('input_Numbar').addEventListener('mouseout' , function(){
+    
+    let inputElement = document.getElementById('input_Numbar');
+    let parsedValue = parseInt(inputElement.value);
+
+    inputElement.value = parsedValue;
+    
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is DOM (Document Object Model)</title>
+
+    <style>
+        article{
+            border: 2px solid salmon;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <article>
+        <h2 class="author">author-1</h2>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, reprehenderit.</p>
+    </article>
+    <article>
+        <h2 class="author">author-2</h2>
+        <p class="description">Sint impedit ratione delectus error consequatur atque nisi, in facilis.</p>
+    </article>
+    <article>
+        <h2 class="author">author-3</h2>
+        <p class="description">Officiis officia iste ex, itaque omnis maiores cupiditate quae error.</p>
+    </article>
+
+
+    <script>
+        // const querySelector = document.querySelector("article .author");
+        //     querySelector.style.color ="#090";
+
+        const authorjs = document.querySelectorAll("article .author");
+
+        for (let i = 0; i < authorjs.length; i++) {
+            const element = authorjs[i];
+
+            element.innerHTML= "Lekok - " + i;
+            element.style.color ="#090";
+            // console.log(element);
+            
+        }
+    </script>
+
+</body>
+</html>

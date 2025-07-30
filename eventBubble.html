@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubble with example</title>
+
+    <style>
+        #delateItem{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <h2 >My myList</h2>
+        <ul id="ulClick" class="myList">
+            <li id="first_item" class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Perspiciatis, nemo officiis!</li>
+            <li class="item">Suscipit, perferendis facilis? <span id="delateItem">X</span></li>
+        </ul>
+        <button id="addElement">add Element</button>
+    </div>
+
+    <script>
+
+
+
+        document.getElementById("addElement").addEventListener('click' , function(e){
+            let addElementParent = document.getElementById('ulClick');
+
+            let createElement = document.createElement('li');
+            createElement.innerText = "New Items add";
+            createElement.classList.add('item');
+
+
+            addElementParent.appendChild(createElement);
+
+        });
+
+        document.getElementById("ulClick").addEventListener('click' , function(e){
+            
+            // console.log(this , e.target);
+
+            // e.target.parentNode.removeChild(e.target);
+
+            if (e.target.matches('li')) {
+                e.target.style.backgroundColor = 'blue';
+            }
+            
+
+
+
+        });
+
+
+
+        // let items = document.getElementsByClassName('item');
+
+        // for (let i = 0; i < items.length; i++) {
+        //     const item = items[i];
+        //     // console.log(element);
+
+        //     item.addEventListener('click' , function(e){
+        //         e.target.parentNode.removeChild(e.target);
+        //     });
+
+
+        // }
+
+        // document.getElementById("first_item").addEventListener('click' , function(){
+        //     console.log("First item Cilcked");
+        //     // Stop propagating event bubble.
+        // });
+
+        // document.getElementById("ulClick").addEventListener('click' , function(){
+        //     console.log("ul  Cilcked");
+        //     event.stopPropagation();
+        // });
+        // document.getElementById("container").addEventListener('click' , function(){
+        //     console.log("container Cilcked");
+        // });
+
+
+    </script>
+</body>
+</html>
